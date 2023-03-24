@@ -1,4 +1,3 @@
-import "../vendor/pristine/pristine.min.js";
 export const imageUploadForm = document.querySelector(".img-upload__form");
 const submitButton = imageUploadForm.querySelector(".img-upload__submit");
 const hashtagInput = imageUploadForm.querySelector(".text__hashtags");
