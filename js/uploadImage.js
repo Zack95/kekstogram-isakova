@@ -5,7 +5,7 @@ import { effectChange } from "./filter.js";
 
 const imageUploadOverlay = document.querySelector(".img-upload__overlay");
 const imageUpload = document.querySelector("#upload-file");
-const imageUploadCancelButton = document.querySelector("#upload-cancel");
+const imageUploadCancel = document.querySelector("#upload-cancel");
 
 function openImageRedactor() {
   imageUploadOverlay.classList.remove("hidden");
@@ -24,11 +24,11 @@ function closeImageRedactor() {
 
 imageUpload.addEventListener("change", openImageRedactor);
 
-imageUploadCancelButton.addEventListener("click", () => {
+imageUploadCancel.addEventListener("click", () => {
   closeImageRedactor();
 });
 
-imageUploadCancelButton.addEventListener("keydown", (evt) => {
+imageUploadCancel.addEventListener("keydown", (evt) => {
   if (isEscapeKey(evt)) {
     closeImageRedactor();
   }
