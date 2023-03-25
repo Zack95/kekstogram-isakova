@@ -36,7 +36,6 @@ const imageEffectOriginalCheck = () => {
   if (imageEffectCurrent === imageEffectNone) {
     sliderContainer.classList.add("hidden");
     imagePreview.removeAttribute("class");
-    //imagePreview.className = "";
     imagePreview.style.removeProperty("filter");
   } else {
     sliderContainer.classList.remove("hidden");
@@ -62,7 +61,6 @@ export const effectReset = () => {
 
 export function effectChange(evt) {
   if (evt.target.classList.contains("effects__radio")) {
-    //imagePreview.removeAttribute("style");
     const effectName = evt.target.value;
     imagePreview.className = `effects__preview--${effectName}`;
     imageEffectCurrent = imageEffect.find(
@@ -73,16 +71,6 @@ export function effectChange(evt) {
 
   sliderElement.noUiSlider.on("update", () => {
     valueElement.value = sliderElement.noUiSlider.get();
-    // filterValueChange(sliderElement.noUiSlider.get());
     imagePreview.style.filter = `${imageEffectCurrent.filter}(${valueElement.value}${imageEffectCurrent.unit})`;
   });
 }
-
-//function effectAccept(effectName, filterName) {
-//  imagePreview.className = "";
-//  imagePreview.removeAttribute("style");
-//  imagePreview.classList.add(`${effectName}`);
-//  if (filterName != "none") {
-//    imagePreview.style.filter = `${filterName}(0)`;
-//  }
-//}
