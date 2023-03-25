@@ -1,6 +1,5 @@
 import { isEscapeKey } from "./util.js";
-//import { scaleValue, scaleDefault } from "./scale.js";
-import { scaleValueControl, scaleDefault } from "./scale.js";
+import { scaleValueControl, scaleDefault, imagePreview } from "./scale.js";
 import { imageUploadForm, pristine } from "./validation.js";
 
 const uploadPhotoSection = document.querySelector(".img-upload__overlay");
@@ -16,6 +15,7 @@ uploadTemplate.onchange = function () {
 const closephotoForm = () => {
   imageUploadForm.reset();
   pristine.reset();
+  imagePreview.style.transform = `scale(${scaleDefault / 100})`;
   uploadPhotoSection.classList.add("hidden");
   document.body.classList.remove("modal-open");
 };

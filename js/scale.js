@@ -3,7 +3,7 @@ const scaleSmaller = document.querySelector(".scale__control--smaller");
 export const scaleValueControl = document.querySelector(
   ".scale__control--value"
 );
-export const imagePreview = document.querySelector(".img-upload__preview");
+export const imagePreview = document.querySelector(".img-upload__preview img");
 const scaleStep = 25;
 const scaleMax = 100;
 const scaleMin = 25;
@@ -42,11 +42,3 @@ scaleBigger.addEventListener("click", () => {
 scaleSmaller.addEventListener("click", () => {
   buttonSmaller();
 });
-//console.log(buttonBigger());
-//
-//scaleBigger.addEventListener("click", () => {
-//  if (scaleValue.value < scaleMax) {
-//    scaleValue.value = scaleValue.value + scaleStep;
-//  }
-//  imagePreview.style.transform = scale(0.${scaleValue.value}%);
-//});
