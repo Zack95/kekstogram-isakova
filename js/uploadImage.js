@@ -1,23 +1,24 @@
 import { isEscapeKey } from "./util.js";
 import { scaleValueControl, scaleDefault, imagePreview } from "./scaleImage.js";
 import { imageUploadForm, pristine } from "./validation.js";
-import "./filter.js";
+import { effectChange } from "./filter.js";
 
-const uploadPhotoSection = document.querySelector(".img-upload__overlay");
-const uploadTemplate = document.querySelector("#upload-file");
+const imageUploadOverlay = document.querySelector(".img-upload__overlay");
+const imageUpload = document.querySelector("#upload-file");
 const cancelButton = document.querySelector("#upload-cancel");
 
-uploadTemplate.onchange = function () {
-  uploadPhotoSection.classList.remove("hidden");
+imageUpload.onchange = function () {
+  imageUploadOverlay.classList.remove("hidden");
   scaleValueControl.value = `${scaleDefault}%`;
   document.body.classList.add("modal-open");
+  imageUploadForm.addEventListener("change", effectChange);
 };
 
 const closephotoForm = () => {
   imageUploadForm.reset();
   pristine.reset();
   imagePreview.style.transform = `scale(${scaleDefault / 100})`;
-  uploadPhotoSection.classList.add("hidden");
+  imageUploadOverlay.classList.add("hidden");
   document.body.classList.remove("modal-open");
 };
 
