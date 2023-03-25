@@ -9,6 +9,10 @@ const scaleMax = 100;
 const scaleMin = 25;
 export const scaleDefault = 100;
 
+export const scaleImageReset = () => {
+  imagePreview.removeAttribute("style");
+};
+
 function scaleImage(scaleValue) {
   imagePreview.style.transform = `scale(${scaleValue / 100})`;
   scaleValueControl.value = `${scaleValue}%`;

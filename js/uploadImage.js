@@ -1,5 +1,10 @@
 import { isEscapeKey } from "./util.js";
-import { scaleValueControl, scaleDefault, imagePreview } from "./scaleImage.js";
+import {
+  scaleValueControl,
+  scaleDefault,
+  imagePreview,
+  scaleImageReset,
+} from "./scaleImage.js";
 import { imageUploadForm, pristine } from "./validation.js";
 import { effectChange } from "./filter.js";
 
