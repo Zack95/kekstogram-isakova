@@ -5,29 +5,31 @@ import { effectChange } from "./filter.js";
 
 const imageUploadOverlay = document.querySelector(".img-upload__overlay");
 const imageUpload = document.querySelector("#upload-file");
-const cancelButton = document.querySelector("#upload-cancel");
+const imageUploadCancelButton = document.querySelector("#upload-cancel");
 
-imageUpload.onchange = function () {
+function openImageRedactor() {
   imageUploadOverlay.classList.remove("hidden");
   scaleValueControl.value = `${scaleDefault}%`;
   document.body.classList.add("modal-open");
   imageUploadForm.addEventListener("change", effectChange);
-};
+}
 
-const closephotoForm = () => {
+function closeImageRedactor() {
   imageUploadForm.reset();
   pristine.reset();
   imagePreview.style.transform = `scale(${scaleDefault / 100})`;
   imageUploadOverlay.classList.add("hidden");
   document.body.classList.remove("modal-open");
-};
+}
 
-cancelButton.addEventListener("click", () => {
-  closephotoForm();
+imageUpload.addEventListener("change", openImageRedactor);
+
+imageUploadCancelButton.addEventListener("click", () => {
+  closeImageRedactor();
 });
 
-cancelButton.addEventListener("keydown", (evt) => {
+imageUploadCancelButton.addEventListener("keydown", (evt) => {
   if (isEscapeKey(evt)) {
-    closephotoForm();
+    closeImageRedactor();
   }
 });
