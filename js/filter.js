@@ -68,6 +68,7 @@ export function effectChange(evt) {
     );
     effectSliderUpdate();
   }
+  effectSliderUpdate();
 
   sliderElement.noUiSlider.on("update", () => {
     valueElement.value = sliderElement.noUiSlider.get();
