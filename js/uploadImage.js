@@ -6,7 +6,7 @@ import {
   scaleImageReset,
 } from "./scaleImage.js";
 import { imageUploadForm, pristine } from "./validation.js";
-import { effectChange } from "./filter.js";
+import { effectChange, effectReset } from "./filter.js";
 
 const imageUploadOverlay = document.querySelector(".img-upload__overlay");
 const imageUpload = document.querySelector("#upload-file");
