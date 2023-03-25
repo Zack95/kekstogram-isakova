@@ -1,6 +1,7 @@
 import { isEscapeKey } from "./util.js";
-import { scaleValueControl, scaleDefault, imagePreview } from "./scale.js";
+import { scaleValueControl, scaleDefault, imagePreview } from "./scaleImage.js";
 import { imageUploadForm, pristine } from "./validation.js";
+import "./filter.js";
 
 const uploadPhotoSection = document.querySelector(".img-upload__overlay");
 const uploadTemplate = document.querySelector("#upload-file");
