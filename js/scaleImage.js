@@ -30,7 +30,6 @@ function buttonBigger() {
 
 function buttonSmaller() {
   const scaleCurrentValue = parseInt(scaleValueControl.value, 10);
-  console.log(scaleCurrentValue);
   let scaleNewValue = scaleCurrentValue - scaleStep;
   if (scaleNewValue < scaleMin) {
     scaleNewValue = scaleMin;
